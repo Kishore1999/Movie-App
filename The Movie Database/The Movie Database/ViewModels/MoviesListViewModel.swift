@@ -111,6 +111,7 @@ final class MoviesListViewModel: ObservableObject {
     private func searchMovies(query: String) async {
         guard !isLoading else { return }
 
+        movies = []
         isLoading = true
         error = nil
         currentPage = 1
