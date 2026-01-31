@@ -33,7 +33,7 @@ struct MoviesListView: View {
 
     @ViewBuilder
     private var content: some View {
-        if viewModel.isLoading && viewModel.isSearching {
+        if viewModel.isLoading && viewModel.isSearching && viewModel.movies.isEmpty {
             // Shimmer skeleton for search loading
             SkeletonGrid(columns: columns)
         } else if viewModel.isLoading && viewModel.movies.isEmpty {
